@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Mystery+Quest&family=Ranchers&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* header */
+
+header {
+    background: center/cover no-repeat url(./img-dessert/banniere.png);
+}
+
+#logo {
+    position: relative;
+    left: 100px;
+    top: 70px;
+}
+h1 {
+    font-size: 6rem;
+    color: #e6d098;
+    text-align: center;
+    font-family: "Mystery Quest";
+}
+header a {
+    font-size: 1.5rem;
+    color: #a85702;
+    background-color: #e6d098;
+    padding: 5px;
+    margin: 20px;
+    height: 30px;
+    text-decoration: none;
+    border-radius: 8px;
+}
+#headerNav {
+    display: flex;
+    justify-content: space-between;
+}
+footer {
+    height: 60vh;
+    background: center/cover no-repeat url(./img-dessert/footer.png);
+    position: relative;
+    padding: 2rem;
+}
+footer > img {
+    margin-top: 10rem;
+}
+footer h3 {
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 3rem;
+}
+footer p {
+    color: white;
+    margin-top: 5rem;
+    margin-left: 18rem;
+}
+footer div {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 5vw;
+    bottom: 5vh;
+}
+footer div img {
+    width: 50px;
+    margin-top: 50px;
+}
+section {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+
+}
+article {
+    position: relative;
+}
+article h2 {
+    font-family: Ranchers;
+    color: #e6d098;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+}
