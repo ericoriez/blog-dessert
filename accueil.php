@@ -1,28 +1,37 @@
-<!-- connection a la base de donnée -->
 <?php require_once "connect.php";
 
-    // creation de la variable requete de la base de donnée 
-    $req = $db->query("SELECT `id_categorie`, `name`, `vignette` FROM `categorie`");
-
-    // transformation de la requete(objet ilisible)en tableaux 
+    $req = $db->query("SELECT `id_categorie`, `name`, `vignette` FROM `categorie`"); 
     $fetch = $req->fetchAll(PDO::FETCH_ASSOC);
 
-    // stocker les information de facon temporaire 
     ob_start();?>
-        <section><?php
-            // creation de la boucle pour parcourir le tableau $cat correspond a 1 tableau de chaque boucle
+        <section class="categorie"><?php
             foreach($fetch as $cat){ ?>
-                <article>
-                    <h2><?= $cat['name']?></h2>
-                    <a href=""><img src="./img-dessert/<?= $cat['vignette']?>" alt=""></a>
+                <article >
+                    <a href="">
+                         <h2><?= $cat['name']?></h2>
+                         <img src="./assets/img-dessert/<?= $cat['vignette']?>" alt="">
+                    </a>
                 </article>
             <?php } ?>
-        </section><?php
-// indique a la variable de prendre les informations et a remettre a 0 la valeur 
+        </section><?php 
     $categorie = ob_get_clean();
 
-    // recupere le fichier "template-header-footer.php" pour afficher le header et le footer
-    require_once "template-header-footer.php";
     
+    
+    $reqart = $db->query("SELECT `id_article`, `titre`, `photo`, `date_creation` FROM `articles`");
+    $fetch2 = $reqart->fetchAll(PDO::FETCH_ASSOC);
 
+    ob_start();?>
+        <section class="articles" ><?php
+            foreach($fetch2 as $catart){ ?>
+                <article>
+                    <figure>
+                        <figcaption><?= $catart['titre']?></figcaption>
+                        <a href=""><img src="./assets/img-dessert/<?= $catart['photo']?>" alt=""></a>
+                    </figure>   
+                </article>
+            <?php } ?>
+         </section><?php
+    $categorie2 = ob_get_clean();
 
+require_once "./assets/template-header-footer.php";

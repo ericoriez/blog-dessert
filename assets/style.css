@@ -65,23 +65,38 @@ footer div img {
     width: 50px;
     margin-top: 50px;
 }
-section {
+.categorie {
     display: flex;
     text-align: center;
     justify-content: space-between;
-
+    margin: 5vh;
 }
-article {
+.categorie article {
     position: relative;
 }
-article h2 {
+section:nth-child(1) article h2 {
     font-family: Ranchers;
     color: #e6d098;
     -webkit-text-stroke: 1px;
-    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-color: rgb(26, 26, 26);
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
-    
+    transform: translate(-50%, -50%);
+}
+.articles {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 2rem;
+    justify-content: space-between;
+    padding: 4vh 8vw;
+}
+.articles figcaption {
+    font-family: "Mystery Quest";
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+.admin {
+    background-color: black;
 }
