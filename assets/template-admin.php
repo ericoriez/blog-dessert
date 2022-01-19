@@ -7,7 +7,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="./assets/style.css">
 </head>
-<body class= "admin">
-    
+<body class="background-black">
+    <main>
+      <?= $formulaire ?>
+    </main>
 </body>
 </html>
