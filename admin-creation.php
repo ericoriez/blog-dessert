@@ -5,7 +5,13 @@ if(isset($_POST['submit'])){
     $ingredients = $_POST['ingredients']; 
     $photo = $_POST['photo']; 
     $preparation = $_POST['preparation']; 
+    $cat = $_POST['catego'];
     $art = $db->query("INSERT INTO `articles` (`titre`, `ingredients`, `photo`, `preparation`) VALUES ('$titre', '$ingredients', '$photo', '$preparation')");
+    $lastId = $db->lastInsertId();
+    $pivot = $db->query("INSERT INTO `articles_categorie`(`id_articles`, `id_categorie`) VALUES ('$lastId', '$cat')");
+    var_dump($cat); 
+    var_dump($lastId);
+
 }
 ob_start();
 ?>
@@ -23,21 +29,21 @@ ob_start();
         </fieldset>
         <fieldset>
             <p>Choix de la catégorie:</p>
-            <input type="checkbox" id="catego" name="catego[]" value="biscuit">
+            <input type="radio" id="catego" name="catego" value="1">
             <label for="catego">Biscuits</label>
-            <input type="checkbox" id="catego" name="catego[]" value="viennoiserie">
+            <input type="radio" id="catego" name="catego" value="2">
             <label for="catego">Viennoiseries</label>
-            <input type="checkbox" id="catego" name="catego[]" value="gateaux">
+            <input type="radio" id="catego" name="catego" value="3">
             <label for="catego">Gâteaux</label>
-            <input type="checkbox" id="catego" name="catego[]" value="cremes">
+            <input type="radio" id="catego" name="catego" value="4">
             <label for="catego">Crèmes, Mousse</label>
-            <input type="checkbox" id="catego" name="catego[]" value="tartes">
+            <input type="radio" id="catego" name="catego" value="5">
             <label for="catego">Tartes</label>
-            <input type="checkbox" id="horns" name="catego[]" value="glaces">
+            <input type="radio" id="horns" name="catego" value="6">
             <label for="catego">Glaces</label>
-            <input type="checkbox" id="catego" name="catego[]" value="boissons">
+            <input type="radio" id="catego" name="catego" value="7">
             <label for="catego">Boissons</label>
-            <input type="checkbox" id="catego" name="catego[]" value="autres">
+            <input type="radio" id="catego" name="catego" value="8">
             <label for="catego">Autres</label>
         </fieldset>
         <fieldset class="submit">

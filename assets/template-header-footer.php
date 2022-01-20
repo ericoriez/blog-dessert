@@ -11,12 +11,15 @@
     <header>
         <div id="headerNav">
              <figure id="logo"><img src="./assets/img-dessert/logo.png" alt=""></figure>
-             <a href="#">Connexion</a>
+             <nav>
+                <a href="#">Connexion</a>
+                <a href="./admin-creation.php">Créer un article</a>
+             </nav>
         </div>
         <h1>Pâtisserie</h1>
     </header>
     <main>
-        <?= $categorie, $categorie2;?>
+        <?= $categorie, $contenu;?>
     </main>
     <footer>
         <img src="./assets/img-dessert/Vector-cote" alt="">

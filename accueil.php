@@ -23,15 +23,15 @@
 
     ob_start();?>
         <section class="articles" ><?php
-            foreach($fetch2 as $catart){ ?>
+            foreach($fetch2 as $ligne){ ?>
                 <article>
                     <figure>
-                        <figcaption><?= $catart['titre']?></figcaption>
-                        <a href=""><img src="./assets/img-dessert/<?= $catart['photo']?>" alt=""></a>
+                        <figcaption><?= $ligne['titre']?></figcaption>
+                        <a href="./articles.php?id=<?= $ligne['id_article']?> "><img src="./assets/img-dessert/<?= $ligne['photo']?>" alt=""></a>
                     </figure>   
                 </article>
             <?php } ?>
          </section><?php
-    $categorie2 = ob_get_clean();
+    $contenu = ob_get_clean();
 
 require_once "./assets/template-header-footer.php";

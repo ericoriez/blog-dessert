@@ -4,7 +4,7 @@
     padding: 0;
 }
 .background-black{
-    background-color: rgb(15, 15, 15);
+    /* background-color: rgb(15, 15, 15); */
 }
 /* header */
 
@@ -32,6 +32,7 @@ header a {
     height: 30px;
     text-decoration: none;
     border-radius: 8px;
+    display: block;
 }
 #headerNav {
     display: flex;
@@ -88,9 +89,8 @@ section:nth-child(1) article h2 {
     transform: translate(-50%, -50%);
 }
 .articles {
-    display: flex;
-    flex-wrap: wrap;
-    row-gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     justify-content: space-between;
     padding: 4vh 8vw;
 }
@@ -109,12 +109,16 @@ form{
     border-radius: 20px;
     padding: 3rem 0;
 }
+form h2{
+    color: white;
+}
 fieldset{
     width: 45rem;
     margin: 1rem auto;
     background-color: rgb(116, 116, 116);
     border: none;
     border-radius: 10px;
+    padding: 0.5rem;
 }
 h2{
     text-align: center;
@@ -127,4 +131,5 @@ h2{
 }
 .labels{
     display: flex;
+    
 }
